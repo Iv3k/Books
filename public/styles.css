@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    font-size: large;
+    background-color: #E3FDFD;
+}
+
+.welcomeContainer h1{
+    text-align: left;
+}
+
+.welcomeContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 65%;
+}
+
+.welcomeContainer p{
+    width: 55%;
+}
+
