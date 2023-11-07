@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+import axios from "axios";
 
 const app = express();
 const port = 3000;
@@ -20,7 +21,9 @@ db.connect();
 // Show results from database to the frontend page
 app.get("/", async (req, res) => {
   try {
-    const result = await db.query("SELECT name, surname, title, about_book, rating FROM author JOIN book ON book.author_id = author.id");
+    const result = await db.query("SELECT name, surname, title, about_book, rating, key FROM author JOIN book ON book.author_id = author.id");
+
+    const img = await axios.get("https://bored-api.appbrewery.com/random");
 
     result.rows.forEach(row => {
     const authorName = row.name;
@@ -28,6 +31,7 @@ app.get("/", async (req, res) => {
     const bookTitle = row.title;
     const bookDescription = row.about_book;
     const bookRating = row.rating;
+    const bookKey = row.key;
 
     res.render("index.ejs", {
         bookTitle: bookTitle,
@@ -37,7 +41,7 @@ app.get("/", async (req, res) => {
     });
 
     // Do something with the variables
-    console.log(`Column 1: ${authorName}, \nColumn 2: ${authorSurname}, \nColumn 3: ${bookTitle}`);
+    console.log(`ISBN : ${bookKey}`);
   });
   } 
   catch (err) {
