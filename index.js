@@ -17,7 +17,7 @@ const db = new pg.Client({
 
 db.connect();
 
-
+// Show results from database to the frontend page
 app.get("/", async (req, res) => {
   try {
     const result = await db.query("SELECT name, surname, title FROM author JOIN book ON book.author_id = author.id");
