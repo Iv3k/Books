@@ -88,13 +88,12 @@ app.post("/addBook", async (req, res) =>{
 });
 
 app.post("/delete", async (req, res) => {
-  const bookTitle = req.body.deleteBookTitle; // Update to match the name attribute in your form
+  const bookTitle = req.body.deleteBookTitle;
   try {
     await db.query("DELETE FROM book WHERE title = $1", [bookTitle]);
     res.redirect("/");
   } catch (err) {
     console.log(err);
-    // Handle the error appropriately, e.g., send an error response
     res.status(500).send("Error deleting the book");
   }
 });

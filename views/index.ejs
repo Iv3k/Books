@@ -16,8 +16,6 @@
 
     <div class="button-container">
         <button class="create-btn" onclick="toggleForm()">Add New</button>
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
         <select>
             <option value="all">All Books</option>
             <option value="fiction">By Ratings</option>
@@ -52,12 +50,14 @@
         <div class="image">
             <img class="resizable-image" src="<%= book.bookImage %>" alt="API Image">
         </div>
-        <h2><%= book.bookTitle%> by <%=book.bookAuthor%></h2>
-
-        <form action="/delete" method="post">
-            <input type="hidden" name="deleteBookTitle" value="<%= book.bookTitle %>">
-            <button type="submit">Delete</button>
-        </form>
+        <h2><%= book.bookTitle%> by <%=book.bookAuthor%>
+            <div class="delete-form">
+            <form action="/delete" method="post" class="delete-form">
+                <input type="hidden" name="deleteBookTitle" value="<%= book.bookTitle %>">
+                <button type="submit"><img src="/images/delete.png" class="delete-icon"></button>
+            </form>
+            </div>
+        </h2>
 
         <div class="ratings">
         <% for (let i=1; i <=book.bookRating; i++) { %>

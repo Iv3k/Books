@@ -157,6 +157,7 @@ textarea:focus {
 }
 
 .book-container h2, h3{
+    display: flex;
     font-weight: normal;
     font-style: normal;
     font-size: 35px;
@@ -164,6 +165,18 @@ textarea:focus {
     margin-bottom: 1.5%;
     text-transform: uppercase;
     font-family: "Lucida Console", Monaco, monospace;
+}
+
+.delete-form {
+    align-self: flex-end;
+    margin: 5px;
+    padding-bottom: 10px;
+}
+
+.delete-icon {
+    width: 20px;
+    /* Adjust the width and height as needed */
+    height: 20px;
 }
 
 .emptySpace{
@@ -176,8 +189,6 @@ textarea:focus {
     margin-right: 10px;
     width: 200px;
     height: 200px;
-    background-position: center;
-    background-size: cover;
     overflow: hidden;
 }
 
