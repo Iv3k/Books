@@ -32,10 +32,23 @@ body{
     width: 55%;
 }
 
+.ratings {
+    display: flex;
+    margin-top: 0%;
+}
+
+.star {
+    max-width: 4%;
+    height: auto;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 .book-container {
     width: 55%;
     margin: 20px auto;
     border: 1px solid #ddd;
+    padding: 0%;
 }
 
 .book-container h2, h3{
@@ -43,6 +56,7 @@ body{
     font-style: normal;
     font-size: 35px;
     margin-top: 0%;
+    margin-bottom: 1.5%;
     text-transform: uppercase;
     font-family: "Lucida Console", Monaco, monospace;
 }

@@ -20,6 +20,12 @@
         </div>
         <h2><%=bookTitle%> by <%=bookAuthor%></h2>
 
+            <div class="ratings">
+            <% for (let i=1; i <=5; i++) { %>
+                <img src="/images/star.png" alt="Image <%= i %>" class="star">
+            <% } %>
+            </div>
+
         <div class="text">
             <%= bookText %>
         </div>
