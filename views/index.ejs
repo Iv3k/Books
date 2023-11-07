@@ -14,6 +14,17 @@
         </h2>
     </div>
 
+    <div class="button-container">
+        <button class="create-btn">Add New</button>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+        <select>
+            <option value="all">All Books</option>
+            <option value="fiction">By Ratings</option>
+            <option value="non-fiction">Ascending</option>
+        </select>
+    </div>
+
     <div class="book-container">
         <% booksData.forEach(book => { %>
         <div class="image">
