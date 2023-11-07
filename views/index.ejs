@@ -15,7 +15,7 @@
     </div>
 
     <div class="button-container">
-        <button class="create-btn">Add New</button>
+        <button class="create-btn" onclick="toggleForm()">Add New</button>
         <button class="edit-btn">Edit</button>
         <button class="delete-btn">Delete</button>
         <select>
@@ -68,6 +68,14 @@
         <% }); %>
 
     </div>
+
+    <script>
+        // Function to toggle the visibility of the form
+        function toggleForm() {
+            var formContainer = document.querySelector('.form-container');
+            formContainer.style.display = (formContainer.style.display === 'none') ? 'flex' : 'none';
+        }
+    </script>
 
 </body>
 </html>
