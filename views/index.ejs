@@ -54,11 +54,16 @@
         </div>
         <h2><%= book.bookTitle%> by <%=book.bookAuthor%></h2>
 
-            <div class="ratings">
-            <% for (let i=1; i <=book.bookRating; i++) { %>
-                <img src="/images/star.png" alt="Image <%= i %>" class="star">
-            <% } %>
-            </div>
+        <form action="/delete" method="post">
+            <input type="hidden" name="deleteBookTitle" value="<%= book.bookTitle %>">
+            <button type="submit">Delete</button>
+        </form>
+
+        <div class="ratings">
+        <% for (let i=1; i <=book.bookRating; i++) { %>
+            <img src="/images/star.png" alt="Image <%= i %>" class="star">
+        <% } %>
+        </div>
 
         <div class="text">
             <%= book.bookText %>

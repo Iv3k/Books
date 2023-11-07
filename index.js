@@ -85,7 +85,19 @@ app.post("/addBook", async (req, res) =>{
                     [title, rating, authorId, description, isbn]);
 
     res.redirect("/");
-})
+});
+
+app.post("/delete", async (req, res) => {
+  const bookTitle = req.body.deleteBookTitle; // Update to match the name attribute in your form
+  try {
+    await db.query("DELETE FROM book WHERE title = $1", [bookTitle]);
+    res.redirect("/");
+  } catch (err) {
+    console.log(err);
+    // Handle the error appropriately, e.g., send an error response
+    res.status(500).send("Error deleting the book");
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
