@@ -15,20 +15,22 @@
     </div>
 
     <div class="book-container">
+        <% booksData.forEach(book => { %>
         <div class="image">
-            <img class="resizable-image" src="<%= bookImage %>" alt="API Image">
+            <img class="resizable-image" src="<%= book.bookImage %>" alt="API Image">
         </div>
-        <h2><%=bookTitle%> by <%=bookAuthor%></h2>
+        <h2><%= book.bookTitle%> by <%=book.bookAuthor%></h2>
 
             <div class="ratings">
-            <% for (let i=1; i <=bookRating; i++) { %>
+            <% for (let i=1; i <=book.bookRating; i++) { %>
                 <img src="/images/star.png" alt="Image <%= i %>" class="star">
             <% } %>
             </div>
 
         <div class="text">
-            <%= bookText %>
+            <%= book.bookText %>
         </div>
+        <% }); %>
     </div>
 
 </body>
