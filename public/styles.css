@@ -88,25 +88,46 @@ select:hover {
 
 .form-container {
     margin: 20px 0;
-    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 600px;
+    width: 100%;
 }
 
 label {
     margin: 10px;
+    text-align: left;
+    flex: 1;
 }
 
 input,
 textarea {
-    width: 100%;
+    width: calc(100% - 22px);
     padding: 10px;
     margin: 5px 0;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+    /* Prevent dynamic resizing */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #3498db;
+    /* Highlight border on focus */
 }
 
 .book-container {
