@@ -64,6 +64,18 @@ body{
 .image {
     float: left;
     margin-right: 10px;
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.resizable-image {
+    width: 100%;
+    /* The image will take 100% of the container's width */
+    height: auto;
+    /* Maintain the image's aspect ratio */
 }
 
 .text {
