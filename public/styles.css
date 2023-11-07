@@ -24,4 +24,19 @@ body{
     width: 65%;
 }
 
+.book-container {
+    width: 65%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+}
+
+.image {
+    float: left;
+    margin-right: 10px;
+}
+
+.text {
+    width: 100%;
+}
+
 
