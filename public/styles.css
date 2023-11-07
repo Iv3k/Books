@@ -51,12 +51,12 @@ select {
 }
 
 .create-btn {
-    background-color: #38E54D;
+    background-color: #14C38E;
     color: white;
 }
 
 .create-btn:hover {
-    background-color: #45a049;
+    background-color: #65C18C;
 }
 
 .edit-btn {
@@ -175,7 +175,6 @@ textarea:focus {
 
 .delete-icon {
     width: 20px;
-    /* Adjust the width and height as needed */
     height: 20px;
 }
 
