@@ -20,16 +20,18 @@ db.connect();
 // Show results from database to the frontend page
 app.get("/", async (req, res) => {
   try {
-    const result = await db.query("SELECT name, surname, title FROM author JOIN book ON book.author_id = author.id");
+    const result = await db.query("SELECT name, surname, title, about_book FROM author JOIN book ON book.author_id = author.id");
 
     result.rows.forEach(row => {
     const authorName = row.name;
     const authorSurname = row.surname;
     const bookTitle = row.title;
+    const bookDescription = row.about_book;
 
     res.render("index.ejs", {
         bookTitle: bookTitle,
-        bookAuthor: authorName + " " + authorSurname
+        bookAuthor: authorName + " " + authorSurname,
+        bookText: bookDescription
     });
 
     // Do something with the variables

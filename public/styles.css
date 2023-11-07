@@ -8,6 +8,10 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.welcomeContainer h2 {
+    font-weight: lighter;
+}
+
 .welcomeContainer h1{
     align-self: flex-start;
     width: 55%;
