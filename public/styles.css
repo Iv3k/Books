@@ -48,7 +48,7 @@ body{
     width: 55%;
     margin: 20px auto;
     border: 1px solid #ddd;
-    padding: 0%;
+    padding: 5px;
 }
 
 .book-container h2, h3{
@@ -59,6 +59,11 @@ body{
     margin-bottom: 1.5%;
     text-transform: uppercase;
     font-family: "Lucida Console", Monaco, monospace;
+}
+
+.emptySpace{
+    height: 50px;
+    width: 100%;
 }
 
 .image {
@@ -73,9 +78,7 @@ body{
 
 .resizable-image {
     width: 100%;
-    /* The image will take 100% of the container's width */
     height: auto;
-    /* Maintain the image's aspect ratio */
 }
 
 .text {
