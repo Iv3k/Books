@@ -8,7 +8,11 @@ body{
 }
 
 .welcomeContainer h1{
-    text-align: left;
+    width: 65%;
+}
+
+.welcomeContainer p {
+    width: 65%;
 }
 
 .welcomeContainer{
@@ -20,7 +24,4 @@ body{
     width: 65%;
 }
 
-.welcomeContainer p{
-    width: 55%;
-}
 
