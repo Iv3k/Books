@@ -86,6 +86,29 @@ select:hover {
     background-color: #2980b9;
 }
 
+.form-container {
+    margin: 20px 0;
+    width: 55%;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+label {
+    margin: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
 .book-container {
     border: 1px solid #ccc;
     padding: 10px;
