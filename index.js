@@ -17,9 +17,29 @@ const db = new pg.Client({
 
 db.connect();
 
-app.get("/", (req, res) =>{
-    res.render("index.ejs");
-})
+
+app.get("/", async (req, res) => {
+  try {
+    const result = await db.query("SELECT name, surname, title FROM author JOIN book ON book.author_id = author.id");
+
+    result.rows.forEach(row => {
+    const authorName = row.name;
+    const authorSurname = row.surname;
+    const bookTitle = row.title;
+
+    res.render("index.ejs", {
+        bookTitle: bookTitle,
+        bookAuthor: authorName + " " + authorSurname
+    });
+
+    // Do something with the variables
+    console.log(`Column 1: ${authorName}, \nColumn 2: ${authorSurname}, \nColumn 3: ${bookTitle}`);
+  });
+  } 
+  catch (err) {
+    console.log(err);
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
